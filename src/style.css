@@ -1,0 +1,125 @@
+/*Importar una fuente de Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap');
+
+* {
+    margin 0;
+    padding 0;
+    box-sizing: border-box;
+    color: var(#EFEAC2);
+    /*Declarar una variable de color*/
+    color: var(#F05260);
+    color: var(#6895D8);
+    color: var(#D5E2F5);
+    color: var(#76A32E);
+    font-family: 'DM Sans', sans-serif;
+    /*Fuente importada*/
+}
+
+header {
+    display: flexbox;
+    box-shadow: 0 0 4rem -1rem rgba(240, 82, 96, .25);
+    font-size: 1.5rem;
+    text-align: end;
+    justify-content: space-between;
+}
+
+/*nav {
+    max-width: 1000px; 
+    margin: 0 auto;
+}*/
+
+/*#logo {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    max-width: 100%;
+}*/
+
+h1 {
+    margin-right: 3%;
+    font-size: 250%;
+    font-weight: 700;
+}
+
+body {
+    background-color: rgba(239, 234, 194, 0.5);
+}
+
+main {
+    max-width: 1000px; 
+    margin: 0 auto; /*para que se centre*/
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    width: 100%;
+    /*align-items: center;*/
+
+}
+
+/*.peliculas{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}*/
+
+#root {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-content: space-between;
+
+
+}
+
+.pelicula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(213, 226, 245, .5);
+    width: 100%;
+    /*border: solid #000000 5px;*/
+    padding: 1%;
+    margin: 1%;
+    box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
+    /*Sombra*/
+    border-radius: 2%;
+    /*Borde redondeado*/
+    overflow: hidden;
+    /*Para que no se vea lo que sobresale del contenedor*/
+    flex-wrap: wrap;
+    justify-content: center;
+    ;
+
+}
+
+/*Todas las imagenes dentro de la clase pelicula van a tener estas condiciones*/
+.pelicula img {
+    width: 100%;
+    max-width: 100%;
+
+}
+
+.titulo_pelicula {
+    font-size: medium;
+    margin-top: 5%;
+    padding-bottom: 5%;
+
+}
+
+footer {
+    text-align: center;
+}
