@@ -1,11 +1,8 @@
 import { example } from "./dataFunctions.js";
 import { renderItems } from "./view.js";
 
-// import data from './data/lol/lol.js';
-import data from "./data/pokemon/pokemon.js";
-//import data from './data/lol/lol.js';
 import data from "./data/ghibli/ghibli.js";
-// import data from './data/rickandmorty/rickandmorty.js';
+
 /// Obtén una referencia al elemento <dl> en tu HTML donde deseas mostrar las películas.
 const moviesList = document.getElementById("root");
 
@@ -16,9 +13,23 @@ function renderMovies() {
   const movieHTMLArray = data.films.map(
     (film) => `
     <ul>
-      <img src="${film.poster}" alt="Cartel de la película">
-      <li>${film.title}</li>
-    </ul>
+          <div class="pelicula">
+            <img
+              itemprop="image"
+              src="${film.poster}"
+              alt="Cartel"
+            />
+
+            <li
+              class="titulo_pelicula"
+              itemscope
+              itemtype="pelicula"
+              itemprop="title"
+            >
+            ${film.title}
+            </li>
+          </div>
+        </ul>
   `
   );
 

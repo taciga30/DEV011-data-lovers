@@ -21,6 +21,7 @@ header {
     font-size: 1.5rem;
     text-align: end;
     justify-content: space-between;
+
 }
 
 /*nav {
@@ -38,7 +39,7 @@ header {
 h1 {
     margin-right: 3%;
     font-size: 250%;
-    font-weight: 700;
+
 }
 
 body {
@@ -46,40 +47,40 @@ body {
 }
 
 main {
-    max-width: 1000px; 
-    margin: 0 auto; /*para que se centre*/
+    max-width: 1000px;
+    margin: 0 auto;
+    /*para que se centre*/
 }
 
 h2 {
     font-size: 2rem;
 }
 
-label {
+.contador {
     display: flex;
     flex-direction: row;
-    align-content: space-between;
     width: 100%;
-    /*align-items: center;*/
-
+    align-items: center;
+    /*justify-content: space-evenly; /*espacios iguales entre ellos y al inicio y final del contenedor*/
+    justify-content: center;
 }
 
-/*.peliculas{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}*/
+label {
+    margin-right: 2%;
+}
 
 #root {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     align-items: flex-start;
+
 
 }
 
 ul {
     display: flex;
     list-style-type: none;
-    align-content: space-between;
+    /*align-content: space-between;*/
 
 
 }
@@ -90,7 +91,10 @@ ul {
     align-items: center;
     text-align: center;
     background-color: rgba(213, 226, 245, .5);
-    width: 100%;
+    width: 200px;
+    height: 320px;
+    max-width: 200px;
+    max-height: 320px;
     /*border: solid #000000 5px;*/
     padding: 1%;
     margin: 1%;
@@ -108,18 +112,29 @@ ul {
 
 /*Todas las imagenes dentro de la clase pelicula van a tener estas condiciones*/
 .pelicula img {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 90%;
+    /*height: 256px;*/
+    max-height: 80%;
 
 }
 
 .titulo_pelicula {
     font-size: medium;
-    margin-top: 5%;
-    padding-bottom: 5%;
+    margin-top: 3%;
+    padding-bottom: 3%;
 
 }
 
 footer {
     text-align: center;
 }
+
+/*@media screen and(min-width: 768px) {
+    #root {
+        display: flex;
+        flex: 0 0 calc(20% - 2%);
+        max-width: calc(20% - 2%);
+
+    }
+}*/
