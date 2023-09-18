@@ -1,5 +1,5 @@
 import {movieTotal} from "./dataFunctions.js";
-import { renderItems } from "./view.js";
+//import { renderItems } from "./view.js";
 
 import data from "./data/ghibli/ghibli.js";
 
@@ -32,7 +32,7 @@ function renderMovies() {
 
   // Convierte el array de HTML en una cadena y agrega al elemento <ul> en el DOM.
   moviesList.innerHTML = movieHTMLArray.join("");
-  console.log(movieHTMLArray.join(""));
+  //console.log(movieHTMLArray.join(""));
 }
 
 // Llama a la función para mostrar las películas cuando la página se carga.
@@ -45,7 +45,8 @@ const contador = document.querySelector(".contador span")
 function movieShow() { 
   const totalImprime = movieTotal(data.films)
   contador.innerText = totalImprime;
-};
+  //console.log(totalImprime);
+}
 // cuando se carga la pagina,
 window.addEventListener("load",movieShow)
 

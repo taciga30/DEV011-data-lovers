@@ -6,6 +6,6 @@ export const movieTotal = (data) => {
   return totalFilms;
 };
 
-export const anotherExample = () => {
-  return [];
-};
+// export const anotherExample = () => {
+//   return [];
+// };
