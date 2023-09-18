@@ -97,10 +97,9 @@ ul {
     text-align: center;
     background-color: rgba(213, 226, 245, .5);
     width: 200px;
-    height: 320px;
+    height: 280px;
     max-width: 200px;
     max-height: 320px;
-    padding: 2%;
     margin: 2%;
     box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
     /*Sombra*/
@@ -114,12 +113,13 @@ ul {
 }
 
 .pelicula img {
-    max-width: 90%;
-    max-height: 80%;
+    max-width: 80%;
+    /* max-height: 90%; */
 }
 
 .titulo_pelicula {
     font-size: medium;
+    max-width: 90%;
 }
 
 footer {
