@@ -13,22 +13,19 @@ function renderMovies() {
   const movieHTMLArray = data.films.map(
     (film) => `
     <ul>
-          <div class="pelicula">
+          <article class="pelicula">
             <img
               itemprop="image"
               src="${film.poster}"
               alt="Cartel"
             />
-
             <li
               class="titulo_pelicula"
               itemscope
               itemtype="pelicula"
               itemprop="title"
-            >
-            ${film.title}
-            </li>
-          </div>
+            >${film.title}</li>
+          </article>
         </ul>
   `
   );
