@@ -53,7 +53,7 @@ main {
 
 h2 {
     font-size: 200%;
-    margin-top: 2%; 
+    margin-top: 2%;
 }
 
 .contador {
@@ -69,30 +69,24 @@ h2 {
 
 label {
     margin-right: 2%;
-    
+
 }
 
-section{
+section {
     margin-bottom: 2%;
 }
 
-#root {
+ul {
+    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: center;
-    
-}
-
-ul {
-    display: flex;
-    list-style-type: none;
-    /*align-content: space-between;*/
 }
 
 .pelicula {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     align-items: center;
     text-align: center;
     background-color: rgba(213, 226, 245, .5);
@@ -134,7 +128,7 @@ footer {
 
 /* @media (max-width: 667px) {
     #root{ */
-        /*flex: 1 46%;*/
-        /* background-color: #F05260; */
-    /* } */
+/*flex: 1 46%;*/
+/* background-color: #F05260; */
+/* } */
 /* } */
