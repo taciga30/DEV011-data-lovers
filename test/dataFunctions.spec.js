@@ -1,18 +1,19 @@
-import { example, anotherExample } from '../src/dataFunctions.js';
+import { movieTotal } from '../src/dataFunctions.js';
 import { data as fakeData } from './data.js';
 
-console.log(fakeData);
+//console.log(fakeData);
 
-describe('example', () => {
+describe('movieTotal', () => {
+  
+  it('deberia retornar 3 para "'+ fakeData +'"', () => {
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+    expect(movieTotal(fakeData)).toBe(3);
   });
 });
 
-describe('anotherExample', () => {
+// describe('anotherExample', () => {
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });
