@@ -1,5 +1,6 @@
 //const moviesList = document.getElementById("root");
 const ul = document.createElement("ul");
+//const li = document.createElement("li");
 
 export const renderItems = (data) => {
   data.forEach(
@@ -20,5 +21,6 @@ export const renderItems = (data) => {
               </article>
       `)
   );
+  //console.log(ul);
   return ul;
 };
