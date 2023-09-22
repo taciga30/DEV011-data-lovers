@@ -76,12 +76,16 @@ section {
     margin-bottom: 2%;
 }
 
-ul {
-    list-style-type: none;
+#root {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: center;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
 }
 
 .pelicula {
