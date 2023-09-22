@@ -7,9 +7,10 @@
     "htmlhint": "htmlhint src/*.html test/*.html",
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "npm run eslint && npm run htmlhint",
-    "test": "jest --verbose --coverage test/*.spec.js",
+    "test": "jest --verbose --coverage test/",
     "test:e2e": "playwright test",
     "test:oas": "jest --verbose tests-read-only/oa/",
+    "test:js": "jest --verbose test/",
     "pretest:oas-html": "npm run pretest",
     "test:oas-html": "jest --verbose tests-read-only/oa/oa-html.spec.js",
     "test:oas-css": "jest --verbose tests-read-only/oa/oa-css.spec.js",
@@ -18,7 +19,7 @@
     "pretest:oas-web-api": "npm run pretest",
     "test:oas-web-api": "jest --verbose tests-read-only/oa/oa-web-api.spec.js",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
-    "start": "PORT=5000 serve src/",
+    "start": "set PORT=5000 && serve src/",
     "deploy": "gh-pages -d src"
   },
   "devDependencies": {
