@@ -1,4 +1,4 @@
-# Proyecto [Data Lovers](https://taciga30.github.io/DEV011-data-lovers/index.html) :two_hearts:
+# Proyecto [Data Lovers](https://taciga30.github.io/DEV011-data-lovers/src) :two_hearts:
 ## Desarrolladoras 
 
 ### Marcela Avellaneda 
