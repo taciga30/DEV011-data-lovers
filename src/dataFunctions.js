@@ -6,3 +6,4 @@ export const movieTotal = (data) => {
   contador.innerText = parseInt(totalFilms);
   //return parseInt(totalFilms);
 };
+
