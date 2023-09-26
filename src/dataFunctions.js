@@ -6,3 +6,20 @@ export const movieTotal = (data) => {
   contador.innerText = parseInt(totalFilms);
   //return parseInt(totalFilms);
 };
+//para filtrar
+
+
+export function selectElement (){
+  const selectFilter = document.querySelector('[data-testid="select-filter"]');
+  const selectDirector = selectFilter.value;  
+  //selectDirector.addEventListener("change", (data) => {
+  }
+  
+  
+
+
+// export const showDirector = (data) => {
+//   const seeDirector = data.filter(movie => movie.director =   ).map(movie => movie.title);
+//     return seeDirector;
+// };
+  
