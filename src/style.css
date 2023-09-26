@@ -78,14 +78,14 @@ section {
 
 #root {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: center;
+    
 }
 
 ul{
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .pelicula {
