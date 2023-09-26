@@ -10,17 +10,17 @@
       <h1>STUDIO GHIBLI LOVERS</h1>
     </header>
     <main>
-      <h2>PELICULAS</h2>
-      <label> <p> Director</p></label>
- 
-      <select data-testid="select-filter" name="director">
-        <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-        <option value="Isao Takahata">Isao Takahata</option>
-        <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-        <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-        <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-        <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-      </select>
+      <label id="filters">
+       <h2>PELICULAS</h2>
+       <p> Director</p>
+        <select data-testid="select-filter" name="director">
+        </select>
+        <p> Productor</p>
+        <select data-testid="select-filter" name="productor">
+        </select>
+      </label>
+
+      
       <section class="contador">
         <label> TOTAL PELÍCULAS: </label>
         <span> 0 </span>
