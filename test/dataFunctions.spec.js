@@ -1,7 +1,7 @@
 import { movieTotal } from "../src/dataFunctions.js";
 import { data as fakeData } from "./data.js";
 
-//console.log(fakeData);
+console.log(fakeData);
 document.body.innerHTML = `
   <section class="contador">
     <span> 0 </span>
@@ -15,6 +15,19 @@ describe("movieTotal", () => {
     expect(contador.innerText).toBe(3);
   });
 });
+
+//para filtrar
+describe('Función filtrar', () => {
+  // Deberia traer el tituulo de la peli si tienen el mismo director
+  it("trae el titulo My Neighbor Totoro y e Kikis Delivery Service", () => {
+    // filter me filtra por director y map busca el titulo en el objeto y devuelve el resultado
+    const selectDirector = fakeData.filter(movie => movie.director === "Hayao Miyazaki").map(movie => movie.title);
+    expect(selectDirector).toEqual(["My Neighbor Totoro","Kiki's Delivery Service"]); 
+  });
+
+
+});
+
 
 // describe('anotherExample', () => {
 
