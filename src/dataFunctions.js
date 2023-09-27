@@ -9,11 +9,13 @@ export const movieTotal = (data) => {
 //para filtrar
 
 
-export function selectElement (){
-  const selectFilter = document.querySelector('[data-testid="select-filter"]');
-  const selectDirector = selectFilter.value;  
-  //selectDirector.addEventListener("change", (data) => {
-  }
+// export function filterDirector (data){
+//   const selectDirector = data.filter(director) => director.map
+    
+//   });
+
+// };
+  
   
   
 

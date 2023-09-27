@@ -1,7 +1,7 @@
 import { movieTotal } from "../src/dataFunctions.js";
 import { data as fakeData } from "./data.js";
 
-console.log(fakeData);
+//console.log(fakeData);
 document.body.innerHTML = `
   <section class="contador">
     <span> 0 </span>

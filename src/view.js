@@ -1,3 +1,4 @@
+//import { filterDirector } from './dataFunctions.js';
 
 export const renderItems = (data) => {
   //const ul2 = document.querySelector('#root')
@@ -30,20 +31,39 @@ export const renderItems = (data) => {
 };
 
 export const forDirector = (data) => {
-  
-  const optionDirector = document.createElement("option");
-  
-  data.forEach(
-    (director) => {
+  const selectDirector = document.querySelector('[name="director"]')
+  //selectDirector.innerHTML='';
+  //const filteredData = filterDirector(data,select.value);
 
-      optionDirector.setAttribute('value', 'director')
+  data.forEach(
+    (film) => {
+      const optionDirector = document.createElement("option");
+
+      optionDirector.setAttribute('value', film.director)
+      optionDirector.textContent = film.director
         
-     
-      
-      selectDirector.appendChild(option);
+      selectDirector.appendChild(optionDirector);
       
     });
   
-return optionDirector
+  return selectDirector
+  
+};
+export const forProducer = (data) => {
+  const selectProducer = document.querySelector('[name="productor"]')
+
+
+  data.forEach(
+    (film) => {
+      const optionProducer = document.createElement("option");
+
+      optionProducer.setAttribute('value', film.producer)
+      optionProducer.textContent = film.producer
+        
+      selectProducer.appendChild(optionProducer);
+      
+    });
+  
+  return selectProducer
   
 };
