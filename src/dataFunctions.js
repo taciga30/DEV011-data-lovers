@@ -6,4 +6,22 @@ export const movieTotal = (data) => {
   contador.innerText = parseInt(totalFilms);
   //return parseInt(totalFilms);
 };
+//para filtrar
 
+
+// export function filterDirector (data){
+//   const selectDirector = data.filter(director) => director.map
+    
+//   });
+
+// };
+  
+  
+  
+
+
+// export const showDirector = (data) => {
+//   const seeDirector = data.filter(movie => movie.director =   ).map(movie => movie.title);
+//     return seeDirector;
+// };
+  
