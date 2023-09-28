@@ -1,33 +1,33 @@
-import { movieTotal } from "../src/dataFunctions.js";
+import { movieTotal, filterMovieBy } from "../src/dataFunctions.js";
 import { data as fakeData } from "./data.js";
 
-//console.log(fakeData);
+//Html ficticio para que pueda correr la prueba de contar peliculas
 document.body.innerHTML = `
   <section class="contador">
     <span> 0 </span>
   </section>
   `;
 
+//Test para evaluar la función de contar la cantidad de películas
 describe("movieTotal", () => {
-  it('deberia retornar 3 para "' + fakeData + '"', () => {
+  it("deberia retornar 3 para el total de películas", () => {
     const contador = document.querySelector(".contador span");
     movieTotal(fakeData);
     expect(contador.innerText).toBe(3);
   });
 });
 
-//para filtrar
-describe('Función filtrar', () => {
+//Test para evaluar la función para filtrar
+describe("Función filtrar", () => {
   // Deberia traer el tituulo de la peli si tienen el mismo director
-  it("trae el titulo My Neighbor Totoro y e Kikis Delivery Service", () => {
-    // filter me filtra por director y map busca el titulo en el objeto y devuelve el resultado
-    const selectDirector = fakeData.filter(movie => movie.director === "Hayao Miyazaki").map(movie => movie.title);
-    expect(selectDirector).toEqual(["My Neighbor Totoro","Kiki's Delivery Service"]); 
+  it("Trae el titulo My Neighbor Totoro y Kikis Delivery Service", () => {
+    const result = filterMovieBy(fakeData, "director", "Hayao Miyazaki");
+    result.forEach((movie) => {
+      expect(movie.director).toBe("Hayao Miyazaki");
+    });
+    expect(result.length).toBe(2);
   });
-
-
 });
-
 
 // describe('anotherExample', () => {
 

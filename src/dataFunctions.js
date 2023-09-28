@@ -1,27 +1,15 @@
-
-export const movieTotal = (data) => {
+//Función para contar la cantidad de peliculas que se muestran
+export const movieTotal = (moviesList) => {
   const contador = document.querySelector(".contador span");
-  const totalFilms = data.length;
-  //console.log(totalFilms);
+  const totalFilms = moviesList.length;
+
   contador.innerText = parseInt(totalFilms);
-  //return parseInt(totalFilms);
 };
-//para filtrar
 
+//Función para filtrar por director y por productor (en el main se especifica cada filtro)
+export const filterMovieBy = (data, filterBy, value) => {
+  return data.filter((element) => {
+    return element[filterBy] === value;
+  });
+};
 
-// export function filterDirector (data){
-//   const selectDirector = data.filter(director) => director.map
-    
-//   });
-
-// };
-  
-  
-  
-
-
-// export const showDirector = (data) => {
-//   const seeDirector = data.filter(movie => movie.director =   ).map(movie => movie.title);
-//     return seeDirector;
-// };
-  
