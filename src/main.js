@@ -10,8 +10,10 @@ window.addEventListener("load", () => {
 //Muestra en el DOm la función de contar el total de las películas
 window.addEventListener("load", () => movieTotal(data.films));
 //Muestra en el DOM los select
-window.addEventListener("load", () => forDirector(data.films));
-window.addEventListener("load", () => forProducer(data.films));
+window.addEventListener("load", () => {
+  forDirector(data.films)
+  forProducer(data.films)
+});
 
 //Muestra la función de filtrar por director
 const dataDirector = data.films;
@@ -24,6 +26,8 @@ filtrado.addEventListener("change", () => {
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro));
+  movieTotal(resultadoFiltro)
+
 });
 
 //Muestra la función de filtrar por productor
@@ -37,4 +41,15 @@ filtrado2.addEventListener("change", () => {
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro2));
+  movieTotal(resultadoFiltro2)
 });
+
+const boton = document.querySelector("button[data-testid='button-clear']")
+console.log(boton);
+function limpiar(){
+  location.reload();
+}
+boton.addEventListener("click", limpiar);
+
+  
+
