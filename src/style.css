@@ -24,10 +24,12 @@ header {
 
 }
 
-/*nav {
+nav {
+    display: flex;
+    justify-content: space-between;
     max-width: 1000px; 
     margin: 0 auto;
-}*/
+}
 
 /*#logo {
     display: flex;
@@ -76,10 +78,10 @@ section {
     margin-bottom: 2%;
 }
 
-#root {
+/* #root {
     display: flex;
     
-}
+} */
 
 ul{
     list-style-type: none;
