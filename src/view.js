@@ -1,23 +1,37 @@
 //Crear los elementos del HTML con sus respectivos atributos
 export const renderItems = (data) => {
   const ul = document.createElement("ul");
+  ul.setAttribute("class","padre")
   data.forEach((film) => {
     const img = document.createElement("img");
     img.setAttribute("itemprop", "image");
     img.src = film.poster;
-
+    const ul2 = document.createElement("ul");
+    const ul3 = document.createElement("ul");
     const li = document.createElement("li");
     const p = document.createElement("p");
+    const pdirector=document.createAttribute("p")
+
+    const liBack= document.createElement("li")
+
+    ul2.setAttribute("class","tarjetaFlip");
+    ul3.setAttribute("class","tarjetaInner");
+
 
     li.setAttribute("class", "pelicula");
     li.setAttribute("itemscope", "");
     li.setAttribute("itemtype", "pelicula");
     li.setAttribute("itemprop", "title");
     p.textContent = film.title;
+    liBack.setAttribute("class","back");
+    pdirector.textContent = film.director;
     li.appendChild(img);
     li.appendChild(p);
+    ul3.appendChild(li);
+    ul3.appendChild(liBack);
+    ul2.appendChild(ul3);
 
-    ul.appendChild(li);
+    ul.appendChild(ul2);
   });
   return ul;
 };

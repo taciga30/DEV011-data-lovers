@@ -83,32 +83,57 @@ section {
     
 } */
 
-ul{
+.padre{
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
+}
+.tarjetaFlip{
+    width: 180px ;
+    height: 304px;
+    perspective: 2000px;
+
+}
+.tarjetaInner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
+    border-radius:2%;
+    transition: all 550ms;
+    background-color: rgba(213, 226, 245, .5);
+    transform-style: preserve-3d;
 }
 
+.pelicula, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius:2%;
+    backface-visibility: hidden;
+
+}
 .pelicula {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    background-color: rgba(213, 226, 245, .5);
-    width: 200px;
+    /* background-color: rgba(213, 226, 245, .5); */
+    /* width: 200px;
     height: 280px;
     max-width: 200px;
-    max-height: 320px;
-    margin: 2%;
-    box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
+    max-height: 320px; */
+    /* margin: 2%; */
+    /* box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25); */
     /*Sombra*/
-    border-radius: 2%;
+    /* border-radius: 2%; */
     /*Borde redondeado*/
     overflow: hidden;
     /*Para que no se vea lo que sobresale del contenedor*/
-    justify-content: center;
-    ;
+    /* justify-content: center;
+    ; */
 
 }
 
@@ -120,6 +145,20 @@ ul{
 .titulo_pelicula {
     font-size: medium;
     max-width: 90%;
+}
+
+.back {
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    max-width: 90%;
+    padding: 10%;
+    background-color: rgba(213, 226, 245, .5);
+    transform: rotateY('-180');
+
+}
+.tarjetaFlip:hover .tarjetaInner{
+  transform: rotateY(-180deg);
 }
 
 footer {
