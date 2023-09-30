@@ -1,38 +1,37 @@
 //Crear los elementos del HTML con sus respectivos atributos
 export const renderItems = (data) => {
   const ul = document.createElement("ul");
+  ul.setAttribute("class","padre")
   data.forEach((film) => {
     const img = document.createElement("img");
     img.setAttribute("itemprop", "image");
     img.src = film.poster;
-
-    const li1 = document.createElement("li");
+    const ul2 = document.createElement("ul");
+    const ul3 = document.createElement("ul");
+    const li = document.createElement("li");
     const p = document.createElement("p");
+    const pdirector=document.createAttribute("p")
 
-    li1.setAttribute("class", "pelicula");
-    li1.setAttribute("itemscope", "");
-    li1.setAttribute("itemtype", "pelicula");
-    li1.setAttribute("itemprop", "title");
+    const liBack= document.createElement("li")
+
+    ul2.setAttribute("class","tarjetaFlip");
+    ul3.setAttribute("class","tarjetaInner");
+
+
+    li.setAttribute("class", "pelicula");
+    li.setAttribute("itemscope", "");
+    li.setAttribute("itemtype", "pelicula");
+    li.setAttribute("itemprop", "title");
     p.textContent = film.title;
-    li1.appendChild(img);
-    li1.appendChild(p);
-    ul.appendChild(li1);
+    liBack.setAttribute("class","back");
+    pdirector.textContent = film.director;
+    li.appendChild(img);
+    li.appendChild(p);
+    ul3.appendChild(li);
+    ul3.appendChild(liBack);
+    ul2.appendChild(ul3);
 
-    const li2 = document.createElement("li");
-    const h3 = document.createElement("h3");
-    const nameDirector = document.createElement("p");
-    const nameProducer = document.createElement("p");
-    li2.setAttribute("class", "back");
-    li2.setAttribute("itemscope", "");
-    li2.setAttribute("itemtype", "pelicula");
-    li2.setAttribute("itemprop", "title");
-    h3.textContent = film.title;
-    nameDirector.textContent = "Director: " + film.director;
-    nameProducer.textContent = "Productor: " + film.producer;
-    li2.appendChild(h3);
-    li2.appendChild(nameDirector);
-    li2.appendChild(nameProducer);
-    ul.appendChild(li2);
+    ul.appendChild(ul2);
   });
   return ul;
 };
