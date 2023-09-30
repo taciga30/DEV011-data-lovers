@@ -6,18 +6,33 @@ export const renderItems = (data) => {
     img.setAttribute("itemprop", "image");
     img.src = film.poster;
 
-    const li = document.createElement("li");
+    const li1 = document.createElement("li");
     const p = document.createElement("p");
 
-    li.setAttribute("class", "pelicula");
-    li.setAttribute("itemscope", "");
-    li.setAttribute("itemtype", "pelicula");
-    li.setAttribute("itemprop", "title");
+    li1.setAttribute("class", "pelicula");
+    li1.setAttribute("itemscope", "");
+    li1.setAttribute("itemtype", "pelicula");
+    li1.setAttribute("itemprop", "title");
     p.textContent = film.title;
-    li.appendChild(img);
-    li.appendChild(p);
+    li1.appendChild(img);
+    li1.appendChild(p);
+    ul.appendChild(li1);
 
-    ul.appendChild(li);
+    const li2 = document.createElement("li");
+    const h3 = document.createElement("h3");
+    const nameDirector = document.createElement("p");
+    const nameProducer = document.createElement("p");
+    li2.setAttribute("class", "back");
+    li2.setAttribute("itemscope", "");
+    li2.setAttribute("itemtype", "pelicula");
+    li2.setAttribute("itemprop", "title");
+    h3.textContent = film.title;
+    nameDirector.textContent = "Director: " + film.director;
+    nameProducer.textContent = "Productor: " + film.producer;
+    li2.appendChild(h3);
+    li2.appendChild(nameDirector);
+    li2.appendChild(nameProducer);
+    ul.appendChild(li2);
   });
   return ul;
 };

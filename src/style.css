@@ -78,19 +78,66 @@ section {
     margin-bottom: 2%;
 }
 
-/* #root {
+#root {
     display: flex;
+    /* flex-wrap: wrap; */
+    /* position: relative; */
+    /* left: 50%; */
+    /* top: 50%; */
+    transform: rotateY(50%, 50%);
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+}
+
+/* ul{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
     
-} */
+    transform-style: preserve-3d;
+    perspective: 600px;
+    /* transition: 0.5s; */
+    /* position: static;
+
+} */ 
 
 ul{
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    list-style-type: none;
+    
+    /* margin: 20px 40px 40px 20px; */
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
 }
 
-.pelicula {
+.pelicula{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 2%;
+    background-color: rgba(213, 226, 245, .5);
+    box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
+    border-radius: 2%;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    box-shadow: 5px 5px 2px 1px rgb(240, 82, 96, 0.01);
+}
+/* .pelicula {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -103,13 +150,59 @@ ul{
     margin: 2%;
     box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
     /*Sombra*/
-    border-radius: 2%;
+    /* border-radius: 2%; */
     /*Borde redondeado*/
-    overflow: hidden;
+    /* overflow: hidden; */
     /*Para que no se vea lo que sobresale del contenedor*/
-    justify-content: center;
-    ;
+    /* justify-content: center; */
 
+    /* position: static; */
+    /* backface-visibility: hidden; */
+    /* transition: 0.5s; */
+    /* justify-content: space-evenly; */
+    /* top: 0; */
+    /* left: 0; */
+    
+
+/* } */
+
+ul:hover .pelicula {
+    transform: rotateY(-180deg);
+}
+
+ul .back {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(213, 226, 245, .5);
+    
+    border-radius: 2%;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 0.5s;
+   
+    box-shadow: 5px 5px 2px 1px rgba(240, 82, 96, 0.01);
+    
+}
+
+ul:hover .back {
+    transform: rotateY(0deg);
+}
+
+ul .back p {
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    text-align: start;
+    padding: 5%;
+    box-sizing: border-box;
 }
 
 .pelicula img {
