@@ -27,15 +27,22 @@ export const forDirector = (data) => {
   const selectDirector = document.querySelector('[name="director"]');
   //console.log(selectDirector);
   const directorsArray = [];
+  const optionEscoje = document.createElement("option");
+
+      optionEscoje.setAttribute("value", '');
+      optionEscoje.textContent = 'Escoje...';
+      selectDirector.appendChild(optionEscoje);
+
   data.forEach((film) => {
     if (!directorsArray.includes(film.director)) {
       directorsArray.push(film.director);
 
       const optionDirector = document.createElement("option");
-
+      
       optionDirector.setAttribute("value", film.director);
       optionDirector.textContent = film.director;
 
+      
       selectDirector.appendChild(optionDirector);
     }
   });
@@ -47,6 +54,10 @@ export const forDirector = (data) => {
 export const forProducer = (data) => {
   const selectProducer = document.querySelector('[name="productor"]');
   const producerArray = [];
+  const optionEscoje = document.createElement("option");
+    optionEscoje.setAttribute("value", '');
+    optionEscoje.textContent = 'Escoje...';
+    selectProducer.appendChild(optionEscoje);
 
   data.forEach((film) => {
     if (!producerArray.includes(film.producer)) {
