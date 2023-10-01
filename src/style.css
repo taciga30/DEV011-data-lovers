@@ -24,12 +24,6 @@ header {
 
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1000px; 
-    margin: 0 auto;
-}
 
 /*#logo {
     display: flex;
@@ -53,11 +47,29 @@ main {
     /*para que se centre horizontalmente. Establece el margen superior e inferior en 0 y el margen izquierdo y derecho en automático*/
 }
 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px; 
+    margin: 1%;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+}
+
 h2 {
     font-size: 200%;
     margin-top: 2%;
 }
 
+label p{
+    margin: 1%;
+}
+
+#clean{
+    margin: 1%;
+}
 .contador {
     display: flex;
     flex-direction: row;
@@ -67,15 +79,11 @@ h2 {
     justify-content: center;
     padding-right: 2%;
     margin-right: 2%;
-}
-
-label {
-    margin-right: 2%;
-
+    gap: 1%;
 }
 
 section {
-    margin-bottom: 2%;
+    margin: 2%;
 }
 
 /* #root {
@@ -84,81 +92,99 @@ section {
 } */
 
 .padre{
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    list-style-type: none;
+    justify-content: center; 
 }
-.tarjetaFlip{
-    width: 180px ;
-    height: 304px;
-    perspective: 2000px;
 
+.tarjetaFlip{
+    display: flex;
+    /* perspective: 2000px; */
+    margin: 2%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 250px;
+    height: 320px;
+    
 }
+
 .tarjetaInner{
-    position: relative;
+    /* display: flex; */
+    /* position: relative; */
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25);
+    box-sizing: border-box;
+    /* box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25); */
     border-radius:2%;
     transition: all 550ms;
-    background-color: rgba(213, 226, 245, .5);
+    /* background-color: rgb(43, 184, 73); */
     transform-style: preserve-3d;
 }
 
+/* tarjeta de atrás */
 .pelicula, .back {
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     border-radius:2%;
     backface-visibility: hidden;
-
 }
+
 .pelicula {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    /* background-color: rgba(213, 226, 245, .5); */
-    /* width: 200px;
-    height: 280px;
-    max-width: 200px;
-    max-height: 320px; */
-    /* margin: 2%; */
-    /* box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .25); */
+    justify-content:center;
+    box-sizing: border-box;
+    background-color: rgba(213, 226, 245, .9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
     /*Sombra*/
-    /* border-radius: 2%; */
+    box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .5);
     /*Borde redondeado*/
-    overflow: hidden;
+    border-radius: 2%;
     /*Para que no se vea lo que sobresale del contenedor*/
-    /* justify-content: center;
-    ; */
-
+    overflow: hidden;
+    transform: translate(-33%);
 }
 
 .pelicula img {
-    max-width: 80%;
-    /* max-height: 90%; */
+    max-width: 75%;
 }
 
 .titulo_pelicula {
     font-size: medium;
     max-width: 90%;
+    justify-content: center;
+    text-align: center;
 }
 
 .back {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     font-size: medium;
-    max-width: 90%;
-    padding: 10%;
-    background-color: rgba(213, 226, 245, .5);
-    transform: rotateY('-180');
-
+    max-width: 100%;
+    background-color: rgba(213, 226, 245, .9);
+    transform: rotateY(-180deg);
+    /*Para que no se vea lo que sobresale del contenedor*/
+    overflow: hidden;
 }
+
+h3 {
+    max-width: 95%;
+    text-align: center;
+}
+
 .tarjetaFlip:hover .tarjetaInner{
-  transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
 }
 
 footer {
