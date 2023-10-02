@@ -4,55 +4,65 @@ export const renderItems = (data) => {
   ul.setAttribute("class", "padre");
 
   data.forEach((film) => {
-    const ul2 = document.createElement("ul");
-    const ul3 = document.createElement("ul");
     const li = document.createElement("li");
     const liBack = document.createElement("li");
+    const dl = document.createElement("dl");
+    const dlBack = document.createElement("dl");
     const img = document.createElement("img");
-    const p = document.createElement("p");
-    const pDirector = document.createElement("p");
-    const pProducer = document.createElement("p");
-    // const pFecha = document.createElement("p");
+    const dtTitulo = document.createElement("dt");
+    const dtDirector = document.createElement("dt");
+    const dtProducer = document.createElement("dt");
+    const nameDirector = document.createElement("dl");
+    const nameProducer = document.createElement("dl");
+    //const dtFecha = document.createElement("dt");
+    //const numFecha = document.createElement("dl");
     const h3 = document.createElement("h3");
 
-    li.setAttribute("class", "pelicula");
+    li.setAttribute("class", "tarjetaFlip");
     li.setAttribute("itemscope", "");
     li.setAttribute("itemtype", "pelicula");
     li.setAttribute("itemprop", "title");
+    
+    dl.setAttribute("class", "pelicula");
 
     img.setAttribute("itemprop", "image");
     img.src = film.poster;
 
-    p.textContent = film.title;
+    dtTitulo.textContent = film.title;
 
-    li.appendChild(img);
-    li.appendChild(p);
-    ul3.appendChild(li);
-
-    ul2.setAttribute("class", "tarjetaFlip");
+    dl.appendChild(img);
+    dl.appendChild(dtTitulo);
+    liBack.appendChild(dl);
+    
     // Tarjeta de atrás
-    ul3.setAttribute("class", "tarjetaInner");
-
-    liBack.setAttribute("class", "back");
+    liBack.setAttribute("class", "tarjetaInner");
     liBack.setAttribute("itemscope", "");
     liBack.setAttribute("itemtype", "pelicula");
     liBack.setAttribute("itemprop", "info");
+    
+    dlBack.setAttribute("class", "back");
 
     h3.textContent = film.title;
 
-    pDirector.textContent = "Director: " + film.director;
-    pProducer.textContent = "Productor: " + film.producer;
-    // pFecha.textContent = "Lanzamiento: " + film.release_date;
+    dtDirector.textContent = "Director:";
+    nameDirector.textContent = film.director;
+    dtProducer.textContent = "Productor:";
+    nameProducer.textContent = film.producer;
+    // dtFecha.textContent = "Lanzamiento:";
+    // numFecha.textContent = film.release_date;
 
-    liBack.appendChild(h3);
-    liBack.appendChild(pDirector);
-    liBack.appendChild(pProducer);
-    // liBack.appendChild(pFecha);
-    ul3.appendChild(liBack);
+    dlBack.appendChild(h3);
+    dlBack.appendChild(dtDirector);
+    dlBack.appendChild(dtProducer);
+    dtDirector.appendChild(nameDirector);
+    dtProducer.appendChild(nameProducer);
+    // dlBack.appendChild(dtFecha);
+    // dtFecha.appendChild(numFecha);
+    liBack.appendChild(dlBack);
 
-    ul2.appendChild(ul3);
+    li.appendChild(liBack);
 
-    ul.appendChild(ul2);
+    ul.appendChild(li);
   });
   return ul;
 };
@@ -64,7 +74,7 @@ export const forDirector = (data) => {
   const directorsArray = [];
   const optionEscoje = document.createElement("option");
 
-  optionEscoje.setAttribute("value", "");
+  optionEscoje.setAttribute("value", "director");
   optionEscoje.textContent = "Seleccionar director";
   selectDirector.appendChild(optionEscoje);
 
@@ -90,7 +100,7 @@ export const forProducer = (data) => {
   const producerArray = [];
   const optionEscoje = document.createElement("option");
 
-  optionEscoje.setAttribute("value", "");
+  optionEscoje.setAttribute("value", "productor");
   optionEscoje.textContent = "Seleccionar productor";
   selectProducer.appendChild(optionEscoje);
 
