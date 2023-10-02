@@ -160,6 +160,7 @@ section {
 
 .pelicula img {
     max-width: 75%;
+    margin-top: 3%;
 }
 
 .titulo_pelicula {
@@ -172,7 +173,7 @@ section {
 .back {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content:space-between;
     align-items: center;
     font-size: medium;
     max-width: 100%;
@@ -180,15 +181,25 @@ section {
     transform: rotateY(-180deg);
     /*Para que no se vea lo que sobresale del contenedor*/
     overflow: hidden;
-    gap: 15%;
     text-align: center;
+    flex-direction: column;
+    
 }
 
-h3 {
+.back h3 {
+    flex-grow: 1;
     max-width: 95%;
     text-align: center;
+    margin-top: 5%;
+    padding-top: 2%;
 }
 
+.back dt{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
 
 .tarjetaFlip:hover .tarjetaInner{
     transform: rotateY(-180deg);
