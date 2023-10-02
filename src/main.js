@@ -7,15 +7,17 @@ const moviesList = document.querySelector("#root");
 window.addEventListener("load", () => {
   moviesList.appendChild(renderItems(data.films));
 });
+
 //Muestra en el DOm la función de contar el total de las películas
 window.addEventListener("load", () => movieTotal(data.films));
+
 //Muestra en el DOM los select
 window.addEventListener("load", () => {
   forDirector(data.films)
   forProducer(data.films)
 });
 
-//Muestra la función de filtrar por director
+//Muestra en el DOM la función de filtrar por director y el contador
 const dataDirector = data.films;
 const filtrado = document.querySelector('[name="director"]');
 filtrado.addEventListener("change", () => {
@@ -26,11 +28,10 @@ filtrado.addEventListener("change", () => {
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro));
-  movieTotal(resultadoFiltro)
-
+  movieTotal(resultadoFiltro);
 });
 
-//Muestra la función de filtrar por productor
+//Muestra en el DOM la función de filtrar por productor y el contador
 const dataProductor = data.films;
 const filtrado2 = document.querySelector('[name="productor"]');
 filtrado2.addEventListener("change", () => {
@@ -44,6 +45,7 @@ filtrado2.addEventListener("change", () => {
   movieTotal(resultadoFiltro2)
 });
 
+//Ejecuta y muestra en el DOM la función limpiar para volver a estado inicial los filtros
 const boton = document.querySelector("button[data-testid='button-clear']")
 console.log(boton);
 function limpiar(){
