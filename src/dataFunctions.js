@@ -13,3 +13,19 @@ export const filterMovieBy = (data, filterBy, value) => {
   });
 };
 
+function contarPersonajes(films) {
+  let totalPeople = 0;
+  for (let i = 0; i < films.length; i++) {
+    const personajes = films[i].people;
+    totalPeople += personajes.length;
+  }
+  return totalPeople;
+}
+
+export const computeStats = (films) => {
+  const promedio = document.querySelector(".promedio span");
+  const totalPersonajes = contarPersonajes(films);
+  const totalPeliculas = films.length;
+  const resultPromedio = totalPersonajes / totalPeliculas;
+  promedio.innerText = parseInt(resultPromedio);
+};
