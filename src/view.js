@@ -14,15 +14,15 @@ export const renderItems = (data) => {
     const dtProducer = document.createElement("dt");
     const nameDirector = document.createElement("dl");
     const nameProducer = document.createElement("dl");
-    //const dtFecha = document.createElement("dt");
-    //const numFecha = document.createElement("dl");
+    const dtFecha = document.createElement("dt");
+    const numFecha = document.createElement("dl");
     const h3 = document.createElement("h3");
 
     li.setAttribute("class", "tarjetaFlip");
     li.setAttribute("itemscope", "");
     li.setAttribute("itemtype", "pelicula");
     li.setAttribute("itemprop", "title");
-    
+
     dl.setAttribute("class", "pelicula");
 
     img.setAttribute("itemprop", "image");
@@ -33,13 +33,13 @@ export const renderItems = (data) => {
     dl.appendChild(img);
     dl.appendChild(dtTitulo);
     liBack.appendChild(dl);
-    
+
     // Tarjeta de atrás
     liBack.setAttribute("class", "tarjetaInner");
     liBack.setAttribute("itemscope", "");
     liBack.setAttribute("itemtype", "pelicula");
     liBack.setAttribute("itemprop", "info");
-    
+
     dlBack.setAttribute("class", "back");
 
     h3.textContent = film.title;
@@ -48,16 +48,16 @@ export const renderItems = (data) => {
     nameDirector.textContent = film.director;
     dtProducer.textContent = "Productor:";
     nameProducer.textContent = film.producer;
-    // dtFecha.textContent = "Lanzamiento:";
-    // numFecha.textContent = film.release_date;
+    dtFecha.textContent = "Lanzamiento:";
+    numFecha.textContent = film.release_date;
 
     dlBack.appendChild(h3);
     dlBack.appendChild(dtDirector);
     dlBack.appendChild(dtProducer);
     dtDirector.appendChild(nameDirector);
     dtProducer.appendChild(nameProducer);
-    // dlBack.appendChild(dtFecha);
-    // dtFecha.appendChild(numFecha);
+    dlBack.appendChild(dtFecha);
+    dtFecha.appendChild(numFecha);
     liBack.appendChild(dlBack);
 
     li.appendChild(liBack);
@@ -66,7 +66,6 @@ export const renderItems = (data) => {
   });
   return ul;
 };
-
 
 //Traer los directores al select del filtro
 export const forDirector = (data) => {
@@ -118,4 +117,30 @@ export const forProducer = (data) => {
   });
 
   return selectProducer;
+};
+
+//Traer los años al select del filtro
+export const forAño = (data) => {
+  const selectAño = document.querySelector('[name="año"]');
+  const añoArray = [];
+  const optionEscoje = document.createElement("option");
+
+  optionEscoje.setAttribute("value", "año");
+  optionEscoje.textContent = "Seleccionar año";
+  selectAño.appendChild(optionEscoje);
+
+  data.forEach((film) => {
+    if (!añoArray.includes(film.release_date)) {
+      añoArray.push(film.release_date);
+
+      const optionAño = document.createElement("option");
+
+      optionAño.setAttribute("value", film.release_date);
+      optionAño.textContent = film.release_date;
+
+      selectAño.appendChild(optionAño);
+    }
+  });
+
+  return selectAño;
 };

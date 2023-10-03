@@ -31,18 +31,19 @@ El objetivo de este proyecto es que de acuerdo con la información recolectada d
 
 ## 2. Resumen del proyecto
 
-Esta es la primera entrega del segundo proyecto dentro del Bootcamp de ⪡Laboratoria⪢ denominado "Data Lovers", en donde se elaboró una página web para visualizar un conjunto de datos de aucerdo con las necesidades planteadas por nuestros usuarios. 
+Esta es la segunda entrega del segundo proyecto dentro del Bootcamp de ⪡Laboratoria⪢ denominado "Data Lovers", en donde se elaboró una página web para visualizar un conjunto de datos de aucerdo con las necesidades planteadas por nuestros usuarios. 
 
 Para nuestro caso la temática elegida fue "Studio Ghibli"; un estudio de animación japonés, conocido por sus largometrajes
 animados. Después de hacer un research con su fandom se identificaron las [necesidades](#4-Necesidades-Identificadas) que se debían cubrir con el desarrollo de esta página.
 
-Para este caso puntual de la primera entrega se van a poder ver el total de películas y en tarjetas todas las películas con su respectivo nombre. 
+Para la segunda entrega se puede ver el contador del total de películas mostradas en la página, las películas en tarjetas con la imagen y su respectivo nombre, al pasar el mouse por cada tarjeta esta se da la vuelta dejando detallar nuevamente el nombre de la película pero esta vez con la información del nombre del director y del productor de cada una de ellas.
 
 [⇧ Volver al Índice](#índice)
 
 ## 3. Funcionalidades
 
-* Se desarrolla una función que actúa como contador, para poder mostrar la cantidad de películas que estamos viendo en la página web.
+* Se desarrolló la función que actúa como contador, para poder mostrar la cantidad de películas que estamos viendo en la página web.
+* Se desarrolló la función que actúa como filtro, se elige la opción deseada para poder ver las películas según su director o productor. 
 
 [⇧ Volver al Índice](#índice)
 
@@ -50,7 +51,7 @@ Para este caso puntual de la primera entrega se van a poder ver el total de pel�
 
 * Saber cuántas y cuáles son las películas.
 * Tener la información de los directores y productores de cada película.
-* Poder filtrar por director y/o productor y conocer el nombre y la cantidad de las películas en las que han participado.
+* Poder filtrar por director o productor y conocer el nombre y la cantidad de las películas en las que han participado.
 * Tener la información de año de lanzamiento de cada película.
 * Poder ver el promedio de películas lanzadas por cada año.
 
@@ -66,10 +67,14 @@ Inicialmente tuvimos que investigar un poco para poder encontrar la herramienta 
 
 #### Prototipo de baja fidelidad #1 Vs Producto entregado #1
 
-##### Prototipo de baja fidelidad 
+##### Prototipo de baja fidelidad #1
 ![Prototipo1](/images/Pb1.png)
 ##### Producto Entregado 1 
-![Prodcut1](/images/Product1.png)
+![Product1](/images/Product1.png)
+##### Prototipo de baja fidelidad #2
+![Prototipo2](/images/Pb2.png)
+##### Producto Entregado 2 
+![Product2](/images/Product2.png)
 
 [⇧ Volver al Índice](#índice)
 
@@ -86,9 +91,9 @@ mejoraste en tu propuesta final. -->
 
 ## 6. Pruebas unitarias
 
-Se desarrollo la prueba unitaria para la función creada del contador de películas con un resultado de 100% de aprobación.
+Se desarrollaron las pruebas unitarias para las funciones creadas del contador de películas y el filtro por director o productor con un resultado de 100% de aprobación.
 
-![Test1](/images/Test1.png)
+![Test2](/images/Test2.png)
 
 [⇧ Volver al Índice](#índice)
 

@@ -7,30 +7,43 @@
   </head>
   <body>
     <header>
-      <h1>STUDIO GHIBLI LOVERS</h1>
+      <img
+        id="logo"
+        src="http://www.thesugarhit.com/wp-content/uploads/2013/11/1000px-Studio_Ghibli_Logo.svg_.png"
+      />
+      <h1>LOVERS</h1>
     </header>
     <main>
       <h2>PELICULAS</h2>
       <nav>
-        <p> Filtrar por director </p>
-        <label for="prueba" ></label>
+        <p>Filtrar por director</p>
+        <label for="ldirector"></label>
         <select
-          id="prueba"
+          id="ldirector"
           data-testid="select-filter"
           name="director"
         ></select>
-        <p> Filtrar por productor </p>
-        <label for="prueba2"></label>
+        <p>Filtrar por productor</p>
+        <label for="lproductor"></label>
         <select
-          id="prueba2"
+          id="lproductor"
           data-testid="select-filter"
           name="productor"
         ></select>
-        <button id = "clean" type = "button" data-testid="button-clear"  > LIMPIAR </button>
+        <p>Año de estreno</p>
+        <label for="laño"></label>
+        <select id="laño" data-testid="select-filter" name="año"></select>
+        <button id="clean" type="button" data-testid="button-clear">
+          LIMPIAR
+        </button>
       </nav>
 
       <section class="contador">
         <p>TOTAL PELÍCULAS:</p>
+        <span> 0 </span>
+      </section>
+      <section class="promedio">
+        <p>Promedio personajes por película:</p>
         <span> 0 </span>
       </section>
 
