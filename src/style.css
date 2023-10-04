@@ -16,8 +16,9 @@
 
 header {
     box-shadow: 0 0 4rem -1rem rgba(240, 82, 96, .25);
-    display: block;
-    
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;   
 }
 
 #logo {
@@ -26,11 +27,12 @@ header {
 }
 
 h1 {
-    margin-right: 7%;
+    margin-right: 5rem;
     font-size: 38px;
-    text-align:right;
     padding: 0%;
     font-weight:lighter;
+    align-self: flex-end;
+    text-decoration: overline;
 }
 
 body {
@@ -46,7 +48,6 @@ main {
 nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     max-width: 1000px; 
     margin: 1%;
     align-items: center;
@@ -55,7 +56,7 @@ nav {
 }
 
 h2 {
-    font-size: 200%;
+    font-size: 180%;
     margin-top: 2%;
 }
 
@@ -65,17 +66,23 @@ h2 {
 
 select{
     font-size:small;
+    color: #464646;
+    padding: 2px 4px;
+    border-radius: 5px;
 }
 
 #clean{
-    margin: 1%;
+    margin: 2%;
+    padding: 6px 16px;
+    border-radius: 5px;
 }
+
 .cuentas {
     display: flex;
-    width: 100%;
     justify-content: center;
     gap: 4%;
 }
+
 /* .contador {
     display: flex;
     flex-direction: row;
@@ -88,7 +95,7 @@ select{
 } */
 
 section {
-    margin: 2%;
+    margin: 1%;
 }
 
 .padre{
@@ -126,31 +133,30 @@ section {
     backface-visibility: hidden;
 }
 
-.pelicula, .back {
+/* .pelicula, .back {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius:2%;
     backface-visibility: hidden;
 
-}
+} */
 .pelicula {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     align-items: center;
-    text-align: center;
+    text-align: center; */
     justify-content:center;
     box-sizing: border-box;
     background-color: rgba(213, 226, 245, .9);
-    position: absolute;
+    /* position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100%; */
     /*Sombra*/
     box-shadow: 0 0 3rem -1rem rgba(240, 82, 96, .5);
-    /*Borde redondeado*/
     border-radius: 2%;
     /*Para que no se vea lo que sobresale del contenedor*/
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .pelicula img {
@@ -167,11 +173,11 @@ section {
 
 .back {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap;
     justify-content:space-between;
     align-items: center;
     font-size: medium;
-    max-width: 100%;
+    max-width: 100%; */
     background-color: rgba(213, 226, 245, .9);
     transform: rotateY(-180deg);
     /*Para que no se vea lo que sobresale del contenedor*/
@@ -199,7 +205,7 @@ section {
     transform: rotateY(-180deg);
 }
 
-.back {
+/* .back {
     display: flex;
     justify-content: center;
     font-size: medium;
@@ -208,7 +214,7 @@ section {
     background-color: rgba(213, 226, 245, .5);
     transform: rotateY('-180');
 
-}
+} */
 .tarjetaFlip:hover .tarjetaInner{
   transform: rotateY(-180deg);
 }
