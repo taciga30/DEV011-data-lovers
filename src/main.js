@@ -61,7 +61,6 @@ filtrado3.addEventListener("change", () => {
 
 //Ejecuta y muestra en el DOM la función limpiar para volver a estado inicial los filtros
 const boton = document.querySelector("button[data-testid='button-clear']");
-console.log(boton);
 function limpiar() {
   location.reload();
 }
