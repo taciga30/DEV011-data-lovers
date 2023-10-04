@@ -1,9 +1,17 @@
-import { movieTotal, filterMovieBy } from "../src/dataFunctions.js";
+import {
+  movieTotal,
+  filterMovieBy,
+  computeStats,
+} from "../src/dataFunctions.js";
 import { data as fakeData } from "./data.js";
 
 //Html ficticio para que pueda correr la prueba de contar peliculas
 document.body.innerHTML = `
   <section class="contador">
+    <span> 0 </span>
+  </section>
+  <section class="promedio">
+    <p>Promedio personajes por película:</p>
     <span> 0 </span>
   </section>
   `;
@@ -29,16 +37,16 @@ describe("Función filtrar", () => {
   });
 });
 
-// describe('anotherExample', () => {
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
+describe("Función promedio", () => {
+  it("debería retornar 9 como promedio de personajes de las 3 películas", () => {
+    const promedio = document.querySelector(".promedio span");
+    computeStats(fakeData);
+    expect(promedio.innerText).toBe(9);
+  });
+});
 
 // function sumar(a, b) {
 //   return a + b;
-// }
 
 // // Describe el conjunto de pruebas
 // describe('Función sumar', () => {

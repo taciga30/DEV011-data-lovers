@@ -13,3 +13,15 @@ export const filterMovieBy = (data, filterBy, value) => {
   });
 };
 
+export const computeStats = (films) => {
+  const promedio = document.querySelector(".promedio span");
+  const nuevoArray = films.map((i) => i.people.length);
+  console.log(nuevoArray);
+  const totalPeople = nuevoArray.reduce((acumulador, personajes) => {
+    return acumulador + personajes;
+  });
+  console.log(totalPeople);
+  const totalPeliculas = films.length;
+  const resultPromedio = totalPeople / totalPeliculas;
+  promedio.innerText = parseInt(resultPromedio);
+};
