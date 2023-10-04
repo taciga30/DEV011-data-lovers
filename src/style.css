@@ -16,11 +16,13 @@
 
 header {
     box-shadow: 0 0 4rem -1rem rgba(240, 82, 96, .25);
-    text-align: right;
+    display: block;
+    
 }
 
 #logo {
-    width: 450px;
+    max-width: 120px;
+    height: auto;
 }
 
 h1 {
@@ -57,9 +59,9 @@ h2 {
     margin-top: 2%;
 }
 
-label p{
+/* label p{
     margin: 1%;
-}
+} */
 
 select{
     font-size:small;
@@ -68,7 +70,13 @@ select{
 #clean{
     margin: 1%;
 }
-.contador {
+.cuentas {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 4%;
+}
+/* .contador {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -77,7 +85,7 @@ select{
     padding-right: 2%;
     margin-right: 2%;
     gap: 1%;
-}
+} */
 
 section {
     margin: 2%;
