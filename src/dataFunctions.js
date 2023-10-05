@@ -16,12 +16,39 @@ export const filterMovieBy = (data, filterBy, value) => {
 export const computeStats = (films) => {
   const promedio = document.querySelector(".promedio span");
   const nuevoArray = films.map((i) => i.people.length);
-  console.log(nuevoArray);
+  
   const totalPeople = nuevoArray.reduce((acumulador, personajes) => {
     return acumulador + personajes;
   });
-  console.log(totalPeople);
+  
   const totalPeliculas = films.length;
   const resultPromedio = totalPeople / totalPeliculas;
   promedio.innerText = parseInt(resultPromedio);
+};
+//Función para ordenar 
+export const sortData = (data, sortBy, sortOrder) => {
+  console.log("data", data);
+  console.log("sortBy", sortBy);
+  console.log("sortOrder", sortOrder );
+  const dataOrden =data.sort((a,b)=> {
+    if (sortOrder === "asc"){
+      if (a[sortBy]< b[sortBy]){
+        return -1;
+      }
+      if (a[sortBy]> b[sortBy]){
+        return 1;
+      } 
+    }
+    if (sortOrder === "desc"){
+      if (a[sortBy]< b[sortBy]){
+        return 1;
+      }
+      if (a[sortBy]> b[sortBy]){
+        return -1;
+      } 
+    }
+    
+  })
+  console.log(dataOrden);   
+  return  dataOrden;
 };

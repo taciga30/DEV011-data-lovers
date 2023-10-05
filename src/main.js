@@ -1,4 +1,4 @@
-import { movieTotal, filterMovieBy, computeStats } from "./dataFunctions.js";
+import { movieTotal, filterMovieBy, computeStats, sortData } from "./dataFunctions.js";
 import { renderItems, forDirector, forProducer, forAño } from "./view.js";
 import data from "./data/ghibli/ghibli.js";
 
@@ -58,6 +58,23 @@ filtrado3.addEventListener("change", () => {
   moviesList.appendChild(renderItems(resultadoFiltro3));
   movieTotal(resultadoFiltro3);
 });
+
+
+
+const ordenarPor = document.querySelector('[name="title"]');
+ordenarPor.addEventListener("change", () => {
+  console.log(ordenarPor);
+  const dataOrden = data.films 
+  const nuevoArray = [...dataOrden]
+  
+ 
+  const resultadoOrder = sortData(nuevoArray, "title", ordenarPor.value,);
+
+  moviesList.innerHTML = "";
+  moviesList.appendChild(renderItems(resultadoOrder));
+  movieTotal(resultadoOrder);
+});
+
 
 //Ejecuta y muestra en el DOM la función limpiar para volver a estado inicial los filtros
 const boton = document.querySelector("button[data-testid='button-clear']");
