@@ -18,58 +18,59 @@ window.addEventListener("load", () => {
 });
 
 //Muestra en el DOM la función de filtrar por director y el contador
-const dataDirector = data.films;
+const dataFilter = data.films;
 const filtrado = document.querySelector('[name="director"]');
-filtrado.addEventListener("change", () => {
+const filtrado2 = document.querySelector('[name="productor"]');
+const filtrado3 = document.querySelector('[name="año"]'); 
+const ordenarPor = document.querySelector('[name="title"]');
+let newArray = dataFilter;
+
+filtrado.addEventListener("change", (e) => {
+  const filtradoValue = e.target.value;
   const resultadoFiltro = filterMovieBy(
-    dataDirector,
+    dataFilter,
     "director",
-    filtrado.value
+    filtradoValue
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro));
+  newArray = resultadoFiltro
   movieTotal(resultadoFiltro);
 });
 
 //Muestra en el DOM la función de filtrar por productor y el contador
-const dataProductor = data.films;
-const filtrado2 = document.querySelector('[name="productor"]');
 filtrado2.addEventListener("change", () => {
   const resultadoFiltro2 = filterMovieBy(
-    dataProductor,
+    dataFilter,
     "producer",
     filtrado2.value
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro2));
+  newArray= resultadoFiltro2
   movieTotal(resultadoFiltro2);
 });
 
 //Muestra en el DOM la función de filtrar por año y el contador
-const dataAño = data.films;
-const filtrado3 = document.querySelector('[name="año"]');
 filtrado3.addEventListener("change", () => {
   const resultadoFiltro3 = filterMovieBy(
-    dataAño,
+    dataFilter,
     "release_date",
     filtrado3.value
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro3));
+  newArray = resultadoFiltro3
   movieTotal(resultadoFiltro3);
 });
 
-
-
-const ordenarPor = document.querySelector('[name="title"]');
+//Muestra en el DOM la función de Ordenar
 ordenarPor.addEventListener("change", () => {
-  console.log(ordenarPor);
-  const dataOrden = data.films 
-  const nuevoArray = [...dataOrden]
+  const nuevoArray = [...newArray]
   
- 
-  const resultadoOrder = sortData(nuevoArray, "title", ordenarPor.value,);
 
+  const resultadoOrder = sortData(nuevoArray, "title", ordenarPor.value,);
+ 
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoOrder));
   movieTotal(resultadoOrder);
@@ -79,6 +80,9 @@ ordenarPor.addEventListener("change", () => {
 //Ejecuta y muestra en el DOM la función limpiar para volver a estado inicial los filtros
 const boton = document.querySelector("button[data-testid='button-clear']");
 function limpiar() {
-  location.reload();
+  newArray= dataFilter;
+  moviesList.innerHTML = "";
+  moviesList.appendChild(renderItems(dataFilter));
+  movieTotal(dataFilter);
 }
 boton.addEventListener("click", limpiar);
