@@ -48,14 +48,14 @@ describe("Función promedio", () => {
 });
 
 describe("Función ordenar", () => {
-  it("ordena Alfabeticamente por titulo", () => {
+  it("ordena de forma ascendente por titulo", () => {
     const result = sortData(fakeData, "title", "asc");
     expect(result).toEqual(dataOrdenada);
   });
 });
 
 describe("Función ordenar", () => {
-  it("ordena Alfabeticamente por titulo", () => {
+  it("ordena de forma descendebte por titulo", () => {
     const result = sortData(fakeData, "title", "desc");
     expect(result).toEqual(dataOrdenada2);
   });
