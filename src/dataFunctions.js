@@ -32,20 +32,18 @@ export const sortData = (data, sortBy, sortOrder) => {
       if (a[sortBy]< b[sortBy]){
         return -1;
       }
-      if (a[sortBy]> b[sortBy]){
+      else if (a[sortBy]> b[sortBy]){
         return 1;
       } 
     }
-    if (sortOrder === "desc"){
+    else if (sortOrder === "desc"){
       if (a[sortBy]< b[sortBy]){
         return 1;
       }
-      if (a[sortBy]> b[sortBy]){
+      else if (a[sortBy]> b[sortBy]){
         return -1;
       } 
-    }
-    
-  })
-    
+    }  
+  })  
   return  dataOrden;
 };

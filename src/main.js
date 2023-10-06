@@ -80,9 +80,13 @@ ordenarPor.addEventListener("change", () => {
 //Ejecuta y muestra en el DOM la función limpiar para volver a estado inicial los filtros
 const boton = document.querySelector("button[data-testid='button-clear']");
 function limpiar() {
-  newArray= dataFilter;
+  newArray = data.films;
+  document.querySelector("select[name='director']").value = "director";
+  document.querySelector("select[name='productor']").value = "productor";
+  document.querySelector("select[name='año']").value = "año";
+  document.querySelector("select[name='title']").value = "";
   moviesList.innerHTML = "";
-  moviesList.appendChild(renderItems(dataFilter));
-  movieTotal(dataFilter);
+  moviesList.appendChild(renderItems(newArray));
+  movieTotal(newArray);
 }
 boton.addEventListener("click", limpiar);
