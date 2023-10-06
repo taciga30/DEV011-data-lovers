@@ -47,7 +47,7 @@ main {
 nav {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
+    
     margin: 1%;
     align-items: center;
     justify-content: center;
@@ -61,6 +61,7 @@ h2 {
 
 nav p {
     font-size: medium;
+    margin-bottom: 1%;
 }
 
 select {
@@ -68,10 +69,15 @@ select {
     color: #464646;
     padding: 2px 4px;
     border-radius: 5px;
+    margin-bottom: 1%;
 }
 
+.boton{
+    display:flex;
+    justify-content: center;
+}
 #clean {
-    margin-top: 2%;
+    
     padding: 6px 16px;
     border-radius: 5px;
     font-size: medium;
