@@ -25,7 +25,7 @@
 }
 </style> 
 <img class="foto" src="https://avatars.githubusercontent.com/u/142236935?v=4" alt="fotom" width="40" height="40"/>
-<a href="https://github.com/marcescala" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" alt="github" width="40" height="40"/> </a> 
+<a href="https://github.com/marcescala" target="_blank" rel="noreferrer" {#identifier .foto}> <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" alt="github" width="40" height="40"/> </a> 
 
 ### Tatiana Cifuentes 
 
