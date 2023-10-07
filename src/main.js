@@ -1,4 +1,4 @@
-import { movieTotal, filterMovieBy, computeStats } from "./dataFunctions.js";
+import { movieTotal, filterMovieBy, computeStats, sortData } from "./dataFunctions.js";
 import { renderItems, forDirector, forProducer, forAño } from "./view.js";
 import data from "./data/ghibli/ghibli.js";
 
@@ -18,50 +18,75 @@ window.addEventListener("load", () => {
 });
 
 //Muestra en el DOM la función de filtrar por director y el contador
-const dataDirector = data.films;
+const dataFilter = data.films;
 const filtrado = document.querySelector('[name="director"]');
-filtrado.addEventListener("change", () => {
+const filtrado2 = document.querySelector('[name="productor"]');
+const filtrado3 = document.querySelector('[name="año"]'); 
+const ordenarPor = document.querySelector('[name="title"]');
+let newArray = dataFilter;
+
+filtrado.addEventListener("change", (e) => {
+  const filtradoValue = e.target.value;
   const resultadoFiltro = filterMovieBy(
-    dataDirector,
+    dataFilter,
     "director",
-    filtrado.value
+    filtradoValue
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro));
+  newArray = resultadoFiltro
   movieTotal(resultadoFiltro);
 });
 
 //Muestra en el DOM la función de filtrar por productor y el contador
-const dataProductor = data.films;
-const filtrado2 = document.querySelector('[name="productor"]');
 filtrado2.addEventListener("change", () => {
   const resultadoFiltro2 = filterMovieBy(
-    dataProductor,
+    dataFilter,
     "producer",
     filtrado2.value
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro2));
+  newArray= resultadoFiltro2
   movieTotal(resultadoFiltro2);
 });
 
 //Muestra en el DOM la función de filtrar por año y el contador
-const dataAño = data.films;
-const filtrado3 = document.querySelector('[name="año"]');
 filtrado3.addEventListener("change", () => {
   const resultadoFiltro3 = filterMovieBy(
-    dataAño,
+    dataFilter,
     "release_date",
     filtrado3.value
   );
   moviesList.innerHTML = "";
   moviesList.appendChild(renderItems(resultadoFiltro3));
+  newArray = resultadoFiltro3
   movieTotal(resultadoFiltro3);
 });
+
+//Muestra en el DOM la función de Ordenar
+ordenarPor.addEventListener("change", () => {
+  const nuevoArray = [...newArray]
+  
+
+  const resultadoOrder = sortData(nuevoArray, "title", ordenarPor.value,);
+ 
+  moviesList.innerHTML = "";
+  moviesList.appendChild(renderItems(resultadoOrder));
+  movieTotal(resultadoOrder);
+});
+
 
 //Ejecuta y muestra en el DOM la función limpiar para volver a estado inicial los filtros
 const boton = document.querySelector("button[data-testid='button-clear']");
 function limpiar() {
-  location.reload();
+  newArray = data.films;
+  document.querySelector("select[name='director']").value = "director";
+  document.querySelector("select[name='productor']").value = "productor";
+  document.querySelector("select[name='año']").value = "año";
+  document.querySelector("select[name='title']").value = "";
+  moviesList.innerHTML = "";
+  moviesList.appendChild(renderItems(newArray));
+  movieTotal(newArray);
 }
 boton.addEventListener("click", limpiar);
