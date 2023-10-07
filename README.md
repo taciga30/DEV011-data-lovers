@@ -5,7 +5,7 @@
 
 ### Marcela Avellaneda 
 
-<style>
+<!-- <style>
 .foto{
     border-radius: 50%;
     transition: 0.5s;
@@ -23,13 +23,14 @@
 .icono:hover{
     transform: scale(2);
 }
-</style> 
-<img class="foto" src="https://avatars.githubusercontent.com/u/142236935?v=4" alt="fotom" width="40" height="40"/>
-<a href="https://github.com/marcescala" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" alt="github" width="40" height="40"/> </a> 
+</style>  -->
+<!-- <img class="foto" src="https://avatars.githubusercontent.com/u/142236935?v=4" alt="fotom" width="40" height="40"/> -->
+<a href="https://github.com/marcescala" target="_blank" rel="noreferrer"> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" alt="github" width="40" height="40"/> </a> 
 
 ### Tatiana Cifuentes 
 
-<img class="foto" src="https://avatars.githubusercontent.com/u/113222501?v=4" alt="fotot" width="40" height="40"/>
+<!-- <img class="foto" src="https://avatars.githubusercontent.com/u/113222501?v=4" alt="fotot" width="40" height="40"/> -->
 <a href="https://github.com/taciga30" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Github-desktop-logo-symbol.svg" alt="github" width="40" height="40"/> </a>
 
 
